@@ -12,6 +12,8 @@ APMCM（亚太杯英文赛）专属 skill：4 天、A—D 四题、英文、正�
 - `references/05_图表公式与LaTeX模板.md`
 - `references/06_评审与答辩式自查.md`
 - `references/07_优秀论文解剖.md`
+- `references/08_M杯最终论文参考.md`（重要结构/验证参考，非 APMCM 模板）
+- `references/important/MathorCup_2026_A2601605.pdf`（M 杯 2026 A 最终论文，元数据已清理）
 - `references/common/13—17`（工件所有权、验证、总论文整合、数据路线、WSL/Git）
 
 ## 脚本

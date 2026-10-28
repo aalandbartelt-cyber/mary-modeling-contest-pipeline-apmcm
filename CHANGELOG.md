@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-28 — 加入 M 杯最终论文参考
+
+- 新增 `references/important/MathorCup_2026_A2601605.pdf`：M 杯 2026 A 题最终论文；仅清理 PDF 元数据，正文/页数未改。
+- 新增 `references/08_M杯最终论文参考.md`：页面对照、可迁移做法（验证/共享接口/技术路线/附录/边界）、不可照搬项（中文/30 页/赛道格式/具体模型）。
+- `SKILL.md` 增加 0.2 重要参考；README/参考索引同步。
+- 说明：M 杯论文是结构/证据链参考，不是 APMCM 模板；APMCM 仍按英文、25 页、summary/contents/control sheet 执行。
+
 ## 2026-10-28 — 优秀论文二次解剖
 
 - 阅读 2022—2025 年 16 篇 APMCM 优秀论文（A—E，含 2025 A—D）。

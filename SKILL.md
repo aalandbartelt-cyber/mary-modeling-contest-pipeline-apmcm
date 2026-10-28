@@ -45,6 +45,14 @@ description: Use when preparing, running, writing, or rescuing an APMCM (Asia an
 
 详细解剖见 `references/07_优秀论文解剖.md`，原始统计见 `assets/award_paper_metrics.csv`。
 
+### 0.2 重要参考：M 杯 2026 A 题最终论文
+
+`references/important/MathorCup_2026_A2601605.pdf`（元数据已清理，正文未改）是 MathorCup 2026 A 题最终提交版，用作**结构/验证/附录**参考，不是 APMCM 模板：
+
+- 可借：每问“模型→结果→检验→边界”、共享数据接口、技术路线树、附录 A—E、具体边界句；
+- 不可借：中文、30 页正文、MathorCup 格式/AI 声明、啤酒具体模型；
+- 详细页面对照与精读顺序见 `references/08_M杯最终论文参考.md`。
+
 ---
 
 ## 1. 开赛 10 分钟：填 APMCM 参数
@@ -375,6 +383,8 @@ python scripts/env_doctor.py
 | `references/05_图表公式与LaTeX模板.md` | 英文图表、公式、LaTeX/Word、模板清理 |
 | `references/06_评审与答辩式自查.md` | 官方七条、P0/P1/P2、英文 QA |
 | `references/07_优秀论文解剖.md` | 2022—2025 获奖论文的量化结构、summary 写法、图表/章节规律 |
+| `references/08_M杯最终论文参考.md` | M 杯 2026 A 最终论文的页面对照/可迁移做法/不可照搬项 |
+| `references/important/MathorCup_2026_A2601605.pdf` | M 杯最终论文原件（元数据已清理，正文未改） |
 | `references/common/13—17` | 工件所有权、验证、总论文整合、数据路线、WSL/Git |
 | `assets/award_paper_metrics.csv` | 16 篇获奖论文的页数/摘要词数/数字/图表统计 |
 | `assets/apmcm_submission_checklist.md` | 提交前逐项勾 |
