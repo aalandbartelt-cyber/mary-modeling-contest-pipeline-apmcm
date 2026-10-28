@@ -23,9 +23,19 @@ Keywords: keyword1; keyword2; keyword3; keyword4
 ## Rules
 
 - One page; no page break.
+- Target **350–450 words** (award papers: median 387, range 252–527).
+- **10–25 numbers** in total; each problem has 2–3 key results.
 - No formulas, figures, tables, or citation superscripts.
 - Each problem: method + at least one number.
 - Numbers must match `key_numbers.csv` and the body.
 - Use past tense for what was done; present tense for conclusions.
 - 3–5 keywords.
 - No Chinese characters or full-width punctuation.
+
+## Award-style moves
+
+- Open with 1–2 sentences on why the problem matters, not a generic dictionary definition.
+- Name the data/model family in one sentence, then go problem by problem.
+- Each problem paragraph: **method → key number → what it means**.
+- End with one sentence of conclusion and one explicit boundary (“this is a model-based estimate, not a causal/real-world guarantee”).
+- Do not copy the table of contents into the summary.

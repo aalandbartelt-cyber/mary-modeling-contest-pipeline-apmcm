@@ -33,6 +33,18 @@ description: Use when preparing, running, writing, or rescuing an APMCM (Asia an
 
 ---
 
+## 0.1 获奖论文的实际画像（16 篇，2022—2025）
+
+- Summary：**252—527 词**，中位 **387 词**；数字 **5—70 个**，中位 **18.5 个**。
+- 图：中位 **14 张**；表：中位 **4 张**；有的论文图多表少，有的反过来。
+- 总 PDF 中位 **35.5 页**，但正文仍按官方 **25 页**控制；不要把“获奖论文 30+ 页”当借口。
+- 共同骨架：`Introduction → Assumptions → Notations → 每问模型/结果 → Model Evaluation → References → Appendix`。
+- 优秀论文的区分度不在“模型最新”，而在：**每问都回答、数字可追溯、图表能读、英文清楚、优缺点不是空话**。
+
+详细解剖见 `references/07_优秀论文解剖.md`，原始统计见 `assets/award_paper_metrics.csv`。
+
+---
+
 ## 1. 开赛 10 分钟：填 APMCM 参数
 
 复制到 `00_赛题与规则/赛事参数.md`：
@@ -134,6 +146,7 @@ N   Model Evaluation（strengths / weaknesses / sensitivity）
 - 结构：背景 1—2 句 → 总体方法 1 段 → 每问 1 段（方法 + 关键数字）→ 结论/意义 1—2 句 → Keywords 3—5 个。
 - 每问至少 1 个数字；数字必须与正文/结果文件一致。
 - 用过去时描述做了什么，用现在时描述结论/意义；不要“we can see”“very good”这类空话。
+- 目标 **350—450 词**；数字 **10—25 个**（每问 2—3 个关键结果），与正文/结果文件一致。
 
 ### 模板
 
@@ -359,7 +372,9 @@ python scripts/env_doctor.py
 | `references/04_四天冲刺与分工.md` | D1—D4 节奏、三人分工、检查点 |
 | `references/05_图表公式与LaTeX模板.md` | 英文图表、公式、LaTeX/Word、模板清理 |
 | `references/06_评审与答辩式自查.md` | 官方七条、P0/P1/P2、英文 QA |
+| `references/07_优秀论文解剖.md` | 2022—2025 获奖论文的量化结构、summary 写法、图表/章节规律 |
 | `references/common/13—17` | 工件所有权、验证、总论文整合、数据路线、WSL/Git |
+| `assets/award_paper_metrics.csv` | 16 篇获奖论文的页数/摘要词数/数字/图表统计 |
 | `assets/apmcm_submission_checklist.md` | 提交前逐项勾 |
 | `assets/summary_sheet_template.md` | 一页 summary 模板 |
 | `assets/english_style_guide.md` | 英文写作/术语/标点 |

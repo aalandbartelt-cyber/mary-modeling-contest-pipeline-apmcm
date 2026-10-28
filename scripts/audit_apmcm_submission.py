@@ -67,6 +67,10 @@ def audit_pdf(path: Path):
             "Problem Chosen/Team Number")
         add("PASS" if ("keyword" in low1 or "key words" in low1) else "WARN", "Keywords",
             "检出" if ("keyword" in low1 or "key words" in low1) else "未检出")
+        sw = len(re.findall(r"\b[A-Za-z]{2,}\b", p1))
+        sn = len(re.findall(r"\d+(?:\.\d+)?%?", p1))
+        add("PASS" if 300 <= sw <= 550 else "WARN", "Summary 词数", f"{sw} words（获奖中位约 387）")
+        add("PASS" if 10 <= sn <= 30 else "WARN", "Summary 数字数", f"{sn}（获奖中位约 18.5）")
 
         p2 = pages[1].lower() if len(pages) > 1 else ""
         add("PASS" if "contents" in p2 or "table of contents" in p2 else "FAIL", "第 2 页 Contents",

@@ -11,6 +11,7 @@ APMCM（亚太杯英文赛）专属 skill：4 天、A—D 四题、英文、正�
 - `references/04_四天冲刺与分工.md`
 - `references/05_图表公式与LaTeX模板.md`
 - `references/06_评审与答辩式自查.md`
+- `references/07_优秀论文解剖.md`
 - `references/common/13—17`（工件所有权、验证、总论文整合、数据路线、WSL/Git）
 
 ## 脚本
@@ -21,6 +22,10 @@ python scripts/audit_apmcm_submission.py --paper Aapmcm2600001.pdf \
 python scripts/audit_git_hygiene.py --root .
 python scripts/env_doctor.py
 ```
+
+## 优秀论文证据
+
+`assets/award_paper_metrics.csv` 汇总 2022—2025 共 16 篇 APMCM 优秀论文的页数、summary 词数/数字数、图/表数量；`references/07_优秀论文解剖.md` 给出结构、summary、图表与 Model Evaluation 的获奖规律。
 
 ## 安装
 
