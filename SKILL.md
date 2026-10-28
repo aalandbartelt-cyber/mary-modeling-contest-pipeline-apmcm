@@ -39,6 +39,8 @@ description: Use when preparing, running, writing, or rescuing an APMCM (Asia an
 - 图：中位 **14 张**；表：中位 **4 张**；有的论文图多表少，有的反过来。
 - 总 PDF 中位 **35.5 页**，但正文仍按官方 **25 页**控制；不要把“获奖论文 30+ 页”当借口。
 - 共同骨架：`Introduction → Assumptions → Notations → 每问模型/结果 → Model Evaluation → References → Appendix`。
+- 页数分配：Introduction+Assumptions+Notation 约 **3—5 页**；每问 **4—6 页**；Model Evaluation/Conclusions **1—2 页**。
+- 章节名不必死抠：14/16 有 Advantages/Strengths，11/16 有 Sensitivity，8/16 有 Limitations/Weaknesses；每问回答完整比标题规范更重要。
 - 优秀论文的区分度不在“模型最新”，而在：**每问都回答、数字可追溯、图表能读、英文清楚、优缺点不是空话**。
 
 详细解剖见 `references/07_优秀论文解剖.md`，原始统计见 `assets/award_paper_metrics.csv`。
@@ -380,5 +382,6 @@ python scripts/env_doctor.py
 | `assets/english_style_guide.md` | 英文写作/术语/标点 |
 | `assets/paper_outline.md` | 论文骨架 |
 | `scripts/audit_apmcm_submission.py` | PDF/页眉/目录/中文/元数据/包检查 |
+| `scripts/analyze_award_papers.py` | 统计优秀论文页数/summary/图表结构 |
 | `scripts/audit_git_hygiene.py` | 仓库卫生 |
 | `scripts/env_doctor.py` | 环境体检 |

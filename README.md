@@ -21,6 +21,7 @@ python scripts/audit_apmcm_submission.py --paper Aapmcm2600001.pdf \
   --control Aapmcm2600001cns.pdf --zip Aapmcm2600001fj.zip
 python scripts/audit_git_hygiene.py --root .
 python scripts/env_doctor.py
+python scripts/analyze_award_papers.py --input 优秀论文.zip --out metrics.csv
 ```
 
 ## 优秀论文证据

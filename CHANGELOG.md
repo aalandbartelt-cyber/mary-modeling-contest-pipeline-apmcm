@@ -3,9 +3,10 @@
 ## 2026-10-28 — 优秀论文二次解剖
 
 - 阅读 2022—2025 年 16 篇 APMCM 优秀论文（A—E，含 2025 A—D）。
-- 新增 `references/07_优秀论文解剖.md`：量化画像、共同骨架、summary 写法、图表/Model Evaluation 规律、题型信号。
+- 新增 `references/07_优秀论文解剖.md`：量化画像、共同骨架、summary 写法、图表/Model Evaluation 规律、题型信号、章节标签频率、页数分配、不要照抄的例外。
 - 新增 `assets/award_paper_metrics.csv`：页数、summary 词数/数字数、图/表数量统计。
-- 更新 `SKILL.md`：获奖论文实际画像；summary 目标 350—450 词、10—25 个数字。
+- 新增 `scripts/analyze_award_papers.py`：可从优秀论文 zip/目录重新统计结构指标。
+- 更新 `SKILL.md`：获奖论文实际画像；summary 目标 350—450 词、10—25 个数字；页数分配；章节标签频率。
 - 更新 `assets/summary_sheet_template.md`：获奖式开头/每问段落/结尾/边界。
 - 更新 `references/06_评审与答辩式自查.md`：从 16 篇论文提炼的“获奖动作”。
 
