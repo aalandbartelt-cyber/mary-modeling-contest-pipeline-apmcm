@@ -1,6 +1,6 @@
 # mary-modeling-contest-pipeline-apmcm
 
-APMCM（亚太杯英文赛）专属 skill：4 天、A—D 四题、英文、正文 25 页、summary + contents + team header、control sheet 单独提交。
+APMCM（亚太杯英文赛）专属 skill：4 天、A—D 四题、英文、正文 25 页、summary + contents + team header、control sheet 单独提交。2026-11 起按官方 AI 规定执行：使用 AI 须正文标注/References 工具条目/`AI工具使用详情.pdf`；未使用须写官方中文声明。
 
 ## 入口
 
@@ -13,8 +13,36 @@ APMCM（亚太杯英文赛）专属 skill：4 天、A—D 四题、英文、正�
 - `references/06_评审与答辩式自查.md`
 - `references/07_优秀论文解剖.md`
 - `references/08_M杯最终论文参考.md`（重要结构/验证参考，非 APMCM 模板）
+- `references/09_写作与审稿项目规范.md`（项目级写作/审稿）
+- `references/10_图表与排版项目规范.md`（最终尺寸/图例/图文连续/PDF 验收）
+- `references/11_验证与结果叙事.md`
+- `references/12_AI工具与学术诚信.md`（APMCM 2026 官方 AI 规定；勿套另一赛事阈值）
+- `references/13_评分与专家评阅.md`
+- `references/14_协作与Git规范.md`
+- `references/15_附录、支撑材料与复现.md`
+- `references/16_数据与业务题实战.md`
+- `references/17_在线信息约束与盲测纪律.md`
+- `references/18_C题优秀论文逐页解剖.md`
+- `references/19_优秀论文追踪分析规程.md`
+- `references/20_建模叙事公式与可读性规范.md`
+- `references/21_自有论文蒸馏.md`
+- `references/22_数维杯与亚太杯摘要深度解剖.md`
 - `references/important/MathorCup_2026_A2601605.pdf`（M 杯 2026 A 最终论文，元数据已清理）
-- `references/common/13—17`（工件所有权、验证、总论文整合、数据路线、WSL/Git）
+- `references/common/`（13—17：工件所有权、验证、总论文整合、数据路线、WSL/Git）
+
+## 常用资产
+
+- `assets/apmcm_submission_checklist.md`
+- `assets/apmcm_review_report_template.md`
+- `assets/apmcm_figure_inventory_template.csv`
+- `assets/apmcm_problem_chain_template.md`
+- `assets/apmcm_ai_disclosure_checklist.md`
+- `assets/AI_Tool_Usage_Details_Template.md`（English Markdown source）
+- `assets/AI_Tool_Usage_Details_Template.docx`（English, 2 pages, editable）
+- `assets/apmcm_terminology_template.csv`
+- `assets/apmcm_external_review_prompt_template.md`
+- `assets/apmcm_figure_playbook.md`
+- `assets/summary_sheet_template.md`
 
 ## 脚本
 
@@ -36,4 +64,4 @@ python scripts/analyze_award_papers.py --input 优秀论文.zip --out metrics.cs
 - `~/.codex/skills/mary-modeling-contest-pipeline-apmcm`
 - `%USERPROFILE%\.agents\skills\mary-modeling-contest-pipeline-apmcm`
 
-canonical 版本以本目录为准；mcup/base skill 的通用门禁如有更新，同步 `references/common/13—17`。
+canonical 版本以本目录为准；mcup/base skill 的通用门禁如有更新，同步 `references/common/`。

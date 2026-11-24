@@ -1,5 +1,42 @@
 # Changelog
 
+## 2026-11-25 — Devin 深度优化（references 17—22 + 指标脚本 v2）
+
+- 新增 `references/17_在线信息约束与盲测纪律.md`：决策时刻信息清单、未来信息扰动审计、一次性盲测、评估历史日志。
+- 新增 `references/18_C题优秀论文逐页解剖.md`：数据类获奖论文逐页地图、页面配方、可迁移写法、非技术 Article 写法。
+- 新增 `references/19_优秀论文追踪分析规程.md`：每年新获奖论文三步分析流程、必答问题、截断副本检测。
+- 新增 `references/20_建模叙事公式与可读性规范.md`：建模思路谱系、公式呈现规范、可读性句式、格式细节。
+- 新增 `references/21_自有论文蒸馏.md`：MathorCup/国赛/数维杯三篇终稿的结构与证据链参考实现、附录体系、迁移边界。
+- 新增 `references/22_数维杯与亚太杯摘要深度解剖.md`：Summary 黄金配方、证据链型/品牌叙事型双模板、逐句技巧。
+- 新增 `assets/apmcm_external_review_prompt_template.md`、`assets/apmcm_figure_playbook.md`。
+- `scripts/analyze_award_papers.py` 升级 v2：新增页眉页数、公式密度、代码页、正文词数中位数、图重页等指标；`assets/award_paper_metrics.csv` 同步为 v2 列。
+- 更新 `SKILL.md`：0.3 增补 17—22 入口；常见错误扩为 Top 22；参考链接统一为完整文件名。
+- 更新 `README.md`：入口与资产列表补 17—22 与两个新 asset。
+- 修正 `references/21_自有论文蒸馏.md` 页数口径：88 页 = 25 计页（Summary + Contents + 23 正文）+ 63 附录。
+
+## 2026-11-24 — APMCM 2026 官方 AI 规定与规则补充
+
+- 读取 `2026年第十六届APMCM...参赛规则.pdf` 六页原文及组委会 2026-11《人工智能工具使用规定》。
+- 重写 `references/12_AI工具与学术诚信.md`：AI 适用范围、核心模型/算法/结果分析独立完成、正文标注、References 格式、`AI工具使用详情.pdf`、未使用官方中文声明、违规取消资格、剽窃/来源确认。
+- 新增 `assets/AI_Tool_Usage_Details_Template.md` 与 `.docx`（English，2 页）：官方四项内容模板；DOCX 可直接填写后导出 PDF。提交用模板不含内部 self-check checklist；检查项留在 `apmcm_ai_disclosure_checklist.md` 与项目 AI 规范中。
+- 更新 `references/01_APMCM赛制与提交.md`：2026 规则易漏点（3 人队、禁止队外帮助、引用出处、论文形式、每页页眉原文示例、支撑材料/源代码、保留附件、奖项表）。
+- 更新 `SKILL.md` 9.1/0.3/AI 提交参数；`06_评审与答辩式自查.md` 6.6；`assets/apmcm_submission_checklist.md`、`apmcm_ai_disclosure_checklist.md`。
+- 明确：APMCM 2026 这份 AI 通知没有 30%/50% AIGC 阈值；不得把另一赛事阈值/报告模板当 APMCM 规则。
+
+## 2026-11-24 — 项目写作/图表/Git 规范迁移
+
+- 新增 `references/09_写作与审稿项目规范.md`：summary、正文、假设/符号、结果叙事、审稿输出、停止条件。
+- 新增 `references/10_图表与排版项目规范.md`：最终印刷字号、图例、多面板、技术路线图、三维图、图文连续、PDF/Word 验收。
+- 新增 `references/11_验证与结果叙事.md`：基线、敏感性、负对照、百分比/百分点、数据/代码复现。
+- 新增 `references/12_AI工具与学术诚信.md`：APMCM AI 披露（后续按 2026-11 官方通知更新为强制披露）；明确不套用另一赛事的 30%/50% 阈值、六类留痕或 AI 报告模板。
+- 新增 `references/13_评分与专家评阅.md`：APMCM 七条质量门、100 分内部诊断、P0/P1/P2。
+- 新增 `references/14_协作与Git规范.md`：分支/commit/路径所有权/阶段门/handoff。
+- 新增 `references/15_附录、支撑材料与复现.md`：附录代码、可选支撑包、运行说明、复现。
+- 新增 `references/16_数据与业务题实战.md`：问题链、预处理、不确定性、业务约束、数字溯源。
+- 新增 assets：`apmcm_review_report_template.md`、`apmcm_figure_inventory_template.csv`、`apmcm_problem_chain_template.md`、`apmcm_ai_disclosure_checklist.md`、`apmcm_terminology_template.csv`。
+- 更新 `SKILL.md`：0.3 项目规范入口、写作/图表/验证/AI/评分/协作指针、Top 13（2026-11-25 扩为 Top 22）。
+- 明确不可直接迁移：APMCM 页码口径（正文 25 页、summary/contents 前置）、`Team #... Page x of y` 页眉、control sheet 单独提交、另一赛事 AIGC 阈值/AI 报告、具体题目/数据/图号/交付哈希。
+
 ## 2026-10-28 — 加入 M 杯最终论文参考
 
 - 新增 `references/important/MathorCup_2026_A2601605.pdf`：M 杯 2026 A 题最终论文；仅清理 PDF 元数据，正文/页数未改。
