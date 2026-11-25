@@ -2,6 +2,8 @@
 
 APMCM（亚太杯英文赛）专属 skill：4 天、A—D 四题、英文、正文 25 页、summary + contents + team header、control sheet 单独提交。2026-11 起按官方 AI 规定执行：使用 AI 须正文标注/References 工具条目/`AI工具使用详情.pdf`；未使用须写官方中文声明。
 
+2026-11 官方另发布《论文提交规范、论文模板、承诺书》：PDF `#***.pdf`、Control Sheet `#***cns.pdf/.jpg`（单独一页签名）、支撑材料 `#***fj.rar/.zip`（题面未明确要求则不要提交）、正文 ≤25 页、附录不限。原件在比赛工作区 `00_赛题与规则/官方发布/2026论文规范与模板/`（本地，gitignore）；规则摘要见 `references/01_APMCM赛制与提交.md`。
+
 ## 入口
 
 先读 `SKILL.md`；再按赛题读：
@@ -47,8 +49,8 @@ APMCM（亚太杯英文赛）专属 skill：4 天、A—D 四题、英文、正�
 ## 脚本
 
 ```bash
-python scripts/audit_apmcm_submission.py --paper Aapmcm2600001.pdf \
-  --control Aapmcm2600001cns.pdf --zip Aapmcm2600001fj.zip
+python scripts/audit_apmcm_submission.py --paper Aapmcm26XXXXX.pdf \
+  --control Aapmcm26XXXXXcns.pdf --zip Aapmcm26XXXXXfj.zip
 python scripts/audit_git_hygiene.py --root .
 python scripts/env_doctor.py
 python scripts/analyze_award_papers.py --input 优秀论文.zip --out metrics.csv

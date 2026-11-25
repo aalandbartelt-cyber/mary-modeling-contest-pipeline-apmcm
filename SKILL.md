@@ -7,9 +7,9 @@ description: Use when preparing, running, writing, or rescuing an APMCM (Asia an
 
 本 skill 是 `mary-modeling-contest-pipeline` 的 APMCM 专用 profile。
 方法层继承：口径统一、逐问求解、验证优先、R/Python 出图、交接包、总论文整合、提交红线。
-赛制层替换为：**英文、4 天、A—D 四题、正文 25 页、summary + contents + team-number header、control sheet 单独提交、支撑材料可选**。
+赛制层替换为：**英文、4 天、A—D 四题、正文 25 页、summary + contents + team-number header、control sheet 单独提交、支撑材料仅题面要求时提交**。
 
-> 先读官方：`2026年第十六届APMCM亚太地区大学生数学建模竞赛参赛规则.pdf` 与 `2025 APMCM Essay format and submission specifications.pdf`。
+> 先读官方：`2026年第十六届APMCM亚太地区大学生数学建模竞赛参赛规则.pdf`、`2026 APMCM Essay format and submission specifications.pdf`（2026-11 发布）、`2026 APMCM Control Sheet/Summary Sheet` 模板。
 > 本文件是流程提炼，不替代当届官方文件；页数、命名、提交入口以当届通知为准。
 
 ---
@@ -24,9 +24,9 @@ description: Use when preparing, running, writing, or rescuing an APMCM (Asia an
 | 首页 | **summary page（第 1 页）** | 摘要专用页 | 题目+摘要+关键词 |
 | 第 2 页 | **contents（目录）** | 禁止目录 | 必须有目录 |
 | 正文 | **≤25 页**；附录不限 | ≤30 页 | ≤30 页 |
-| 页眉 | **Team #… Page X of Y**，只允许队号/页码 | 通常无页眉 | 无页眉 |
-| 承诺书 | **control sheet 单独签名提交**，不在论文里 | 承诺书/编号页不进电子版 | 承诺书单独 |
-| 支撑材料 | 可选 `.rar/.zip`；程序仍须进论文附录 | ZIP ≤20 MB | ZIP 可达 20 MB+ |
+| 页眉 | **只允许队号+页码**：p1/p2 只有 `Team # <队号>`，正文起左队号 + 右 `Page x of y` | 通常无页眉 | 无页眉 |
+| 承诺书 | **control sheet 单独一页签名提交**，不在论文里 | 承诺书/编号页不进电子版 | 承诺书单独 |
+| 支撑材料 | **题面未明确要求则不交**；若交 `.rar/.zip`；程序仍须进论文附录 | ZIP ≤20 MB | ZIP 可达 20 MB+ |
 | 身份 | 论文任何页不得出现姓名/学校/指导教师；队号可用 | 全匿名 | 全匿名 |
 
 **第一条要记住：APMCM 不是“把国赛论文翻译成英文”。** 首页 summary、第二页 contents、25 页、英文-only、control sheet 单独提交，都是独立的装订层。
@@ -76,8 +76,8 @@ description: Use when preparing, running, writing, or rescuing an APMCM (Asia an
 **不可直接迁移（APMCM 优先）：**
 
 - APMCM 正文 ≤25 页，summary/contents 是前置页；不要套用另一赛事“25 页含 summary/contents”的口径。以当届 APMCM 官方模板/格式说明为准。
-- 页眉只用 `Team #<team number> Page <x> of <y>`；不要套用另一赛事的队号/题号页眉格式。
-- Control Sheet 单独签名提交，**不进论文 PDF**。
+- 页眉只允许队号+页码：官方模板 p1/p2 只放 `Team # <队号>`，正文起左队号 + 右 `Page x of y`（`\pageref{LastPage}`，含附录，不手写 of 25）；不要套用另一赛事的队号/题号页眉格式。
+- Control Sheet 单独一页签名提交，**不进论文 PDF**。
 - AI：APMCM 2026-11 已发布官方 AI 工具使用规定：允许辅助，但核心模型构建、算法设计与求解、结果分析必须由队员独立完成；使用 AI 须在正文相应位置标注、References 列工具、提交 `AI工具使用详情.pdf`；未使用须在 References 后写官方中文声明。不要套用另一赛事 30%/50% 阈值或 AI 报告模板。见 `12`。
 - 另一赛事的具体题目、数据、图号、交付哈希/批次号不能迁移；只迁移可复用的方法与检查表。
 
@@ -89,13 +89,13 @@ description: Use when preparing, running, writing, or rescuing an APMCM (Asia an
 
 ```markdown
 P1 赛事：APMCM 2026（第十六届）
-P2 题目：A / B / C / D（只能选一个）
+P2 题目：A / B / C / D（只能选一个；报名系统所选字母必须与论文一致）
 P3 语言：English only；正文/图表/表注不得出现中文
 P4 页数：summary p1；contents p2；正文≤25页；附录不限
-P5 页眉：Team #<team number> Page <x> of <y>
-P6 提交：论文 PDF（题号+队号.pdf）；control sheet 单独签名 PDF/JPG/PNG；支撑材料可选 .rar/.zip；如使用 AI，另提交 AI工具使用详情.pdf
+P5 页眉：p1/p2 只 `Team # <队号>`；正文起左队号 + 右 `Page x of y`（模板 LastPage）
+P6 提交：论文 `#***.pdf`；control sheet `#***cns.pdf/.jpg` 单独一页签名；支撑材料仅题面要求时 `#***fj.rar/.zip`；系统 https://www.saikr.com/vse/apmcm26
 P7 匿名：论文任何页不得出现姓名/学校/指导教师；队号可用
-P8 模板：官方 LaTeX 模板 / Word；字号 11–12；英文
+P8 模板：官方 LaTeX 模板 / Word；字号 11–12；英文；模板仅供参考
 P9 AI：2026 官方规定；使用 AI 须正文标注/References 工具条目/AI工具使用详情.pdf；未使用须写官方中文声明
 ```
 
@@ -285,8 +285,8 @@ Keywords: keyword1; keyword2; keyword3; keyword4
 ### 论文结构
 
 ```text
-p1 Summary（Team Number / Problem Chosen / Summary / Keywords）
-p2 Contents
+p1 Summary Sheet（Team Number / Problem Chosen / `2026 APMCM summary sheet` / Summary / Keywords）
+p2 Contents（目录）
 正文（page 1 开始）：
   Introduction
   Assumptions and Notations
@@ -295,34 +295,37 @@ p2 Contents
   Model Evaluation / Sensitivity
   Conclusions
   References
-  Appendix（software + all source code）
+  Appendix（software names + all source code）
 ```
 
 ### 页眉/页码
 
-- 2026 规则原文要求**每一页顶部**有参赛编号和页码；官方示例 `Team#apmcm2600001Page10of20`（空格/大小写按官方模板）。
-- 2025 模板可能写作 `Team #<team number> Page <x> of <y>`；不要凭记忆固定空格，按当届模板生成并逐页核对（含 Summary/Contents）。
-- 不出现姓名、学校、指导教师、邮箱。
-- 正文页码从 1 开始；summary/contents 用 front matter 页码或不编号（按模板）。
-- 正文 ≤25 页；附录不计。
+- 官方格式规范：页眉只含队号与页码，不得出现身份/学校信息。官方模板 `apmcmthesis.cls` 实测：p1 Summary、p2 Contents 左页眉只有 `Team # <队号>`（无页码）；正文起左 `Team # <队号>`、右 `Page x of y`。
+- `y` 来自 `\pageref{LastPage}`；页码在 Contents 后重置为 1，所以 y = 正文+附录页数（不含 Summary/Contents）。**不要手写 `of 25`**，也不要因为 y>25 判定正文超页。
+- 格式规范正文示例写作 `Team Aapmcm26300001` / `Page 10 of 25`（无 `#`，25 只是示例）；以官方模板导出效果为准，不要自创第三种写法。
+- 不出现姓名、学校、指导教师、邮箱、学号。
+- 正文 ≤25 页；附录不限；Summary/Contents 不占 25 页。
 
 ### 文件命名
 
-- 论文：`<题号><队号>.pdf`，如 `Aapmcm2600001.pdf`（以当届通知为准）。
-- 承诺书：`<题号><队号>cns.pdf/jpg/png`。
-- 支撑材料：`<题号><队号>fj.rar/zip`。
-- 提交前核对题号、队号、文件名三者一致。
+- 论文：`#***.pdf`（`#`=题号，`***`=队号），如 `Aapmcm2630001.pdf`。
+- 承诺书：`#***cns.pdf` 或 `#***cns.jpg`（官方只列 PDF/JPG）。
+- 支撑材料：`#***fj.rar` 或 `#***fj.zip`；**题面未明确要求时不要提交**。
+- 提交前核对报名系统题号、论文题号、文件名首字母三者一致；不一致取消资格。
 
 ### Control Sheet
 
-- 单独打印/签名/扫描或拍照；包含学校、成员姓名、指导教师、日期。
-- **不要放进论文 PDF**；论文里只允许队号。
-- 每个成员都要签名；缺签名可能取消资格。
+- 必须单独一页；打印后三人手写签名（电子签名可用签名图片入 Word 再转 PDF），扫描为 PDF 或拍照为 JPG。
+- 字段：Problem chosen、Team control number、School 全称、Member name ×3、Team adviser、Date；全部英文填写。
+- 可赛前先签名，选题后补题号；提交后不得修改。
+- **不要放进论文 PDF**（违规）；Control Sheet 本身可以含学校/姓名。
+- 缺任一队员签名 → 全队取消资格。
 
 ### 支撑材料
 
-- 可选；若提交，包含程序、非原始数据、结果等。
-- 论文附录仍须有软件名称 + 全部源代码；支撑材料是额外副本，不是替代。
+- 官方原文括注：`if they are not expressly required in the problem, please do not submit`——题面没明确要求就不交。
+- 若题面要求或确有必要：包含程序、非原始数据、结果等；命名 `#***fj.rar/.zip`。
+- 论文附录仍须有软件名称 + 全部源代码；支撑材料是额外副本，不是替代；源代码保留到获奖名单公布。
 - 不把赛题原始数据打包进去。
 
 附录代码、可选支撑包、运行说明和复现检查见 `15_附录、支撑材料与复现.md`。
@@ -372,15 +375,15 @@ p2 Contents
 
 ## 11. 提交前检查（P0）
 
-- [ ] 题号与内容一致；文件名 = 题号+队号。
-- [ ] p1 summary；p2 contents；正文从 p1 开始；正文 ≤25 页。
-- [ ] 每页 header 有 Team # 和 Page x of y；无姓名/学校/教师/邮箱。
+- [ ] 报名系统题号 = 论文题号 = 文件名首字母；文件名 `#***.pdf`。
+- [ ] p1 Summary Sheet；p2 Contents；正文页码从 1 开始；正文 ≤25 页；附录不限。
+- [ ] 页眉每页只有队号+页码：p1/p2 只有 `Team # <队号>`，正文起左队号 + 右 `Page x of y`；无姓名/学校/教师/邮箱。
 - [ ] 正文/图/表/图例/坐标轴无中文、无全角标点。
 - [ ] 图/表/公式编号连续；正文引用一致；表不跨页；图题同页。
-- [ ] 参考文献按引用顺序；正文有 [n]；无僵尸文献。
-- [ ] 附录有软件名 + 全部源代码；代码路径与支撑包一致。
-- [ ] Control sheet 已签名，单独提交，不在论文里。
-- [ ] 支撑材料（若交）命名正确、无原始数据、无身份信息。
+- [ ] 参考文献按引用顺序；正文有 [n]；书籍条目带页码；无僵尸文献。
+- [ ] 附录有软件名 + 全部源代码；源代码保留到获奖名单公布；代码路径与支撑包一致。
+- [ ] Control sheet = `#***cns.pdf/.jpg`，单独一页、三人签名，不在论文里。
+- [ ] 支撑材料仅在题面明确要求时提交；若交命名 `#***fj.rar/.zip`，无原始数据、无身份信息。
 - [ ] PDF 元数据 author/creator 干净；无中文。
 - [ ] 最终 PDF 在干净环境打开一次；页数/页眉/目录正确。
 - [ ] 按时刻决策的规则做过未来扰动审计；freeze 早于首次测试，评估历史有日志（见 `references/17_在线信息约束与盲测纪律.md`）。
@@ -392,7 +395,8 @@ p2 Contents
 一键审计：
 
 ```bash
-python scripts/audit_apmcm_submission.py --paper Aapmcm2600001.pdf --zip Aapmcm2600001fj.zip
+python scripts/audit_apmcm_submission.py --paper Aapmcm26XXXXX.pdf --control Aapmcm26XXXXXcns.pdf
+python scripts/audit_apmcm_submission.py --paper Aapmcm26XXXXX.pdf --zip Aapmcm26XXXXXfj.zip
 python scripts/audit_git_hygiene.py --root .
 python scripts/env_doctor.py
 ```

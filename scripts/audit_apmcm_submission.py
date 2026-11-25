@@ -3,21 +3,22 @@
 """audit_apmcm_submission.py — APMCM 论文 PDF / control sheet / support ZIP 检查。
 
 用法:
-    python scripts/audit_apmcm_submission.py --paper Aapmcm2600001.pdf
-    python scripts/audit_apmcm_submission.py --paper Aapmcm2600001.pdf \
-        --control Aapmcm2600001cns.pdf --zip Aapmcm2600001fj.zip
+    python scripts/audit_apmcm_submission.py --paper Aapmcm26XXXXX.pdf
+    python scripts/audit_apmcm_submission.py --paper Aapmcm26XXXXX.pdf \
+        --control Aapmcm26XXXXXcns.pdf --zip Aapmcm26XXXXXfj.zip
 
 检查:
-  - 文件名是否符合 <题号><队号>.pdf
+  - 文件名是否符合 `#***.pdf`（题号+队号）
   - 第 1 页 summary / Problem Chosen / Team Number / Keywords
   - 第 2 页 Contents
+  - 前置页队号页眉（官方模板 p1/p2 只有 Team # 队号）
   - 正文 ≤25 页（summary+contents 之后，references 之前）
-  - 页眉 Team # / Page x of y
+  - 正文页眉 Team # / Page x of y
   - 正文/图表无中文（CJK）
   - 正文无姓名/学校/邮箱等身份信息
   - PDF 元数据
-  - control sheet 单独存在且命名正确
-  - 支撑 ZIP 完整性/体积/身份/缓存
+  - control sheet 单独存在且命名正确（官方只列 .pdf/.jpg）
+  - 支撑 ZIP 完整性/体积/身份/缓存（官方：题面未明确要求则不要提交）
 
 退出码: 0 通过（可有 WARN），1 有 FAIL。
 """
@@ -76,6 +77,15 @@ def audit_pdf(path: Path):
         add("PASS" if "contents" in p2 or "table of contents" in p2 else "FAIL", "第 2 页 Contents",
             "检出" if ("contents" in p2 or "table of contents" in p2) else "未检出")
 
+        # Front matter (p1 summary, p2 contents): official template prints team number only, no page number.
+        front_bad = []
+        for i in range(min(2, n)):
+            head = "\n".join(pages[i].splitlines()[:4])
+            if not re.search(r"Team\s*#?", head, re.I):
+                front_bad.append(i + 1)
+        add("PASS" if not front_bad else "WARN", "前置页队号页眉",
+            "p1/p2 均有队号" if not front_bad else f"缺队号：{front_bad}（官方模板 p1/p2 只有 Team # 队号）")
+
         text = "\n".join(pages)
         ref_page = None
         ref_re = re.compile(r"(?m)^\s*(?:[IVX]+\.\s*)?(References|Bibliography)\s*$", re.I)
@@ -122,7 +132,9 @@ def audit_pdf(path: Path):
         md = doc.metadata or {}
         dirty = {k: v for k, v in md.items()
                  if k in ("author", "creator", "producer", "title", "subject", "keywords")
-                 and v and not re.fullmatch(r"Microsoft.?\s*Word.*|WPS.*|LibreOffice.*|.*PDF.*|TeX|pdfTeX.*|LaTeX.*|Overleaf.*", str(v))}
+                 and v and not re.fullmatch(
+                     r"Microsoft.?\s*Word.*|WPS.*|LibreOffice.*|.*PDF.*|TeX|pdfTeX.*|XeTeX.*|"
+                     r"LuaTeX.*|MiKTeX.*|dvipdfmx.*|LaTeX.*|Overleaf.*", str(v).strip())}
         add("FAIL" if dirty else "PASS", "PDF 元数据", str(dirty) if dirty else "干净")
     finally:
         doc.close()
@@ -133,14 +145,15 @@ def audit_control(path: Path | None):
         add("WARN", "Control sheet", "未提供（提交前必须单独签名上传）"); return
     if not path.is_file():
         add("FAIL", "Control sheet 不存在", str(path)); return
-    add("PASS" if re.search(r"[ABCD]apmcm\d+cns\.(pdf|jpe?g|png)$", path.name, re.I) else "FAIL",
-        "Control sheet 命名", path.name)
+    add("PASS" if re.search(r"[ABCD]apmcm\d+cns\.(pdf|jpe?g)$", path.name, re.I) else "FAIL",
+        "Control sheet 命名", path.name + "（官方只列 .pdf/.jpg）")
     add("INFO", "Control sheet 体积", f"{path.stat().st_size/1024:.1f} KB")
 
 
 def audit_zip(path: Path | None):
     if path is None:
-        add("INFO", "支撑材料", "未提供（可选）"); return
+        add("INFO", "支撑材料", "未提供（题面未明确要求时本就不应提交）"); return
+    add("INFO", "支撑材料政策", "官方原文：若题面未明确要求，请不要提交 (if not expressly required, do not submit)")
     if not path.is_file():
         add("FAIL", "支撑 ZIP 不存在", str(path)); return
     add("PASS" if path.stat().st_size / 1024 / 1024 <= 200 else "WARN", "支撑 ZIP 体积",

@@ -39,16 +39,16 @@
 
 ---
 
-## 5.4 APMCM LaTeX 模板
+## 5.4 APMCM LaTeX 模板（2026 官方版）
 
-官方 LaTeX 模板（2025）在 `2025 APMCM 论文提交规范、论文模板、承诺书/APMCM LaTex模板.zip`。
+2026 官方 LaTeX 模板在比赛工作区 `00_赛题与规则/官方发布/2026论文规范与模板/APMCM LaTeX 模板/`（`apmcmthesis.cls` + `apmcmthesis.cfg` + `main.tex` + `ControlSheet.tex` + 编译示例 PDF）。
 
 关键设置：
 
 ```latex
 \documentclass{apmcmthesis}
-\tihao{A}                 % 题号
-\baominghao{apmcm26XXXXX} % 队号
+\tihao{A}                      % 题号
+\baominghao{apmcm26XXXXX}      % 队号
 \begin{document}
 \pagestyle{frontmatterstyle}
 \begin{abstract} ... \keywords{...} \end{abstract}
@@ -61,29 +61,38 @@
 \end{document}
 ```
 
+- 页面：`geometry{top=26.4mm,bottom=26.4mm,left=31.8mm,right=31.8mm}`，行距 1.38；不要改。
+- 页眉：`frontmatterstyle` 只放左页眉 `Team # <队号>`；`mainmatterstyle` 左队号 + 右 `Page \thepage\ of \pageref{LastPage}`；页码在 Contents 后重置为 1，所以 y = 正文+附录页数（不含 Summary/Contents）。
+- Summary 页由 `abstract` 环境生成：顶部 Team Number/Problem Chosen 表 + `2026 APMCM summary sheet` + 摘要 + Keywords。
+- Control Sheet 用 `ControlSheet.tex`（`\schoolname`、`\membera/b/c`、`\supervisor`、`\filldate`、`\makecontrolsheet`）单独编译；不要并进 `main.tex`。
+
 **必须清理**：
 
 - 模板里的中文示例（CJK、公众号图、中文 caption）全部删除/替换；
-- `cat.pdf`、`gongzhonghao` 等示例图不要带入；
-- 编译后检查页眉、目录、页码；
+- `cat`、`gongzhonghao` 等示例图不要带入；
+- 编译后检查 p1/p2 页眉（应只有队号）、正文页眉（队号+页码）、目录、页码重置；
 - 不要改模板的页面设置/页眉格式。
 
-**编译**：PDFLaTeX 推荐；含中文才用 XeLaTeX，但 APMCM 正文不允许中文，所以最终应无 CJK。
+**编译**：PDFLaTeX 推荐；含中文才用 XeLaTeX，但 APMCM 正文不允许中文，所以最终应无 CJK。官方提醒：不熟 LaTeX 的队不要用；编译错误组委会不解答。
 
 ---
 
 ## 5.5 Word 路线
 
-如果不用 LaTeX：
+官方 Word 模板（2026）：
 
-- 第 1 页 Summary；第 2 页 Contents（可用 Word TOC 域）；
-- 页眉 `Team #... Page X of Y`；
-- 正文 11/12 pt；页边距/行距按模板；
-- 图表题注样式统一；
-- 公式用 Word 原生 OMML；
+- `2026 APMCM Summary Sheet.docx`：p1 Summary（Team Number/Problem Chosen 表 + 标题 + 摘要 + Keywords）+ p2 Contents；
+- `2026 APMCM Control Sheet.docx`：单独一页承诺书，三人签名后导出 PDF/JPG，命名为 `<题号><队号>cns.pdf/.jpg`；不要并进论文。
+
+手工 Word 要点：
+
+- 第 1 页 Summary；第 2 页 Contents（TOC 域，导出前更新）；
+- 页眉：Summary/Contents 页只放 `Team # <队号>`；正文起左队号、右 `Page X of Y`（分节 + 页码从 1 开始）；
+- 正文 11/12 pt；页边距/行距无硬性规定，但整篇要统一、美观；
+- 图表题注样式统一；公式用 Word 原生 OMML；
 - 导出 PDF 后逐页检查页眉/目录/页码。
 
-**Word 的坑**：TOC 域不更新、页眉首页不同、图片压缩、公式变图片、PDF 元数据带用户名。
+**Word 的坑**：TOC 域不更新、页眉“首页不同”导致 p1 没队号、分节符把页码带错、图片压缩、公式变图片、PDF 元数据带用户名。
 
 ---
 

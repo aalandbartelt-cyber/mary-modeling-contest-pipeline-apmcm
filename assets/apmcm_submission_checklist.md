@@ -2,12 +2,14 @@
 
 ## A 首页/目录/页数
 
-- [ ] p1 = Summary（Team Number / Problem Chosen / Summary / Keywords）
-- [ ] p2 = Contents
-- [ ] 正文从 Contents 后开始
-- [ ] 正文 ≤25 页
-- [ ] 每页 header = Team # + Page x of y
-- [ ] 无姓名/学校/指导教师/邮箱
+- [ ] p1 = Summary Sheet（Team Number / Problem Chosen / `2026 APMCM summary sheet` / Summary / Keywords）
+- [ ] p2 = Contents（目录，单独一页）
+- [ ] 正文从 Contents 后开始，页码从 1 重新开始
+- [ ] 正文 ≤25 页（Summary/Contents 不占 25 页；附录不限）
+- [ ] 页眉只含队号+页码：p1/p2 只有 `Team # <队号>`，正文起左队号 + 右 `Page x of y`
+- [ ] `Page x of y` 的 y 由模板 `LastPage` 生成（正文+附录），没有手写 `of 25`
+- [ ] 无姓名/学校/指导教师/邮箱/学号
+- [ ] 报名系统题号 = 论文题号 = 文件名首字母
 
 ## B 英文
 
@@ -29,20 +31,23 @@
 
 ## D 参考文献/附录
 
-- [ ] 引用顺序编号
+- [ ] 正文方括号编号，按首次引用顺序
 - [ ] 无僵尸文献
+- [ ] 书籍条目带起止页码；期刊带卷号/页码；网络资源带访问日期
 - [ ] 附录有软件名 + 全部源代码
+- [ ] 源代码保留到获奖名单公布（组委会可能测试）
 - [ ] 代码路径与支撑包一致
 - [ ] 附录代码可运行/可编译
 
 ## E 提交件
 
-- [ ] 论文名 = 题号+队号.pdf
-- [ ] Control sheet 已签名、命名正确、单独提交
-- [ ] 支撑材料（若交）= 题号+队号fj.zip/rar
-- [ ] 支撑包无原始数据、无身份信息
+- [ ] 论文名 = `#***.pdf`（题号+队号），例 `Aapmcm2630001.pdf`
+- [ ] Control sheet = `#***cns.pdf` 或 `.jpg`，单独一页、三人签名、未混入论文
+- [ ] 支撑材料仅在题面明确要求时提交；命名 `#***fj.rar/.zip`
+- [ ] 支撑包无原始数据、无身份信息、无缓存/虚拟环境
 - [ ] PDF 元数据干净
 - [ ] 干净环境打开 PDF 一次
+- [ ] 提交到 https://www.saikr.com/vse/apmcm26 ，论文+承诺书同时交
 
 ## F 写作/证据
 

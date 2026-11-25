@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-11-25 — 2026 官方提交规范 / 模板 / 承诺书落地
+
+- 读取 2026-11 官方《Essay format and submission specifications》（2 页）、《论文提交规范、论文模板、承诺书发布》通知、`2026 APMCM Summary Sheet.docx`、`2026 APMCM Control Sheet.docx`、2026 LaTeX 模板（`apmcmthesis.cls` / `main.tex` / `ControlSheet.tex` / 示例 PDF）。
+- 重写 `references/01_APMCM赛制与提交.md`：
+  - 命名：论文 `#***.pdf`、Control Sheet `#***cns.pdf/.jpg`、支撑材料 `#***fj.rar/.zip`；官方例 `Aapmcm2630001.pdf`。
+  - 页眉实测：p1 Summary / p2 Contents 只有 `Team # <队号>`；正文起左队号 + 右 `Page x of y`；y 来自 `\pageref{LastPage}`（正文+附录，不含前置页），不手写 `of 25`。
+  - Control Sheet 必须单独一页、三人签名、可赛前预签后补题号、禁止混入论文。
+  - 支撑材料官方括注：题面未明确要求则不要提交。
+  - 参考文献三类格式（书籍必须带页码）、附录软件名+全部源码并保留到获奖名单公布、格式不合规无条件取消资格、模板仅供参考/不熟勿用 LaTeX。
+- 更新 `references/05_图表公式与LaTeX模板.md` 5.4/5.5：2026 官方 LaTeX 模板实测设置、`ControlSheet.tex` 单独编译、Word 两套官方模板与分节页眉做法。
+- 更新 `assets/apmcm_submission_checklist.md` A/D/E 节：首页/目录页眉、`Page x of y` 口径、命名、承诺书、支撑材料政策、书籍页码、源码保留。
+- 更新 `SKILL.md`：对比表、参数模板、页眉/命名/Control Sheet/支撑材料小节、P0 清单与审计命令。
+- 更新 `scripts/audit_apmcm_submission.py`：新增前置页队号页眉检查；control sheet 只接受 `.pdf/.jpg`；支撑材料增加“未要求不交”提示。
+
 ## 2026-11-25 — Devin 深度优化（references 17—22 + 指标脚本 v2）
 
 - 新增 `references/17_在线信息约束与盲测纪律.md`：决策时刻信息清单、未来信息扰动审计、一次性盲测、评估历史日志。
