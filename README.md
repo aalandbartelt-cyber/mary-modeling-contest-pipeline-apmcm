@@ -29,6 +29,8 @@ APMCM（亚太杯英文赛）专属 skill：4 天、A—D 四题、英文、正�
 - `references/20_建模叙事公式与可读性规范.md`
 - `references/21_自有论文蒸馏.md`
 - `references/22_数维杯与亚太杯摘要深度解剖.md`
+- `references/23_章节级解剖与模板库.md`
+- `references/24_表格解剖与评委阅读路径.md`
 - `references/important/MathorCup_2026_A2601605.pdf`（M 杯 2026 A 最终论文，元数据已清理）
 - `references/common/`（13—17：工件所有权、验证、总论文整合、数据路线、WSL/Git）
 
@@ -49,8 +51,8 @@ APMCM（亚太杯英文赛）专属 skill：4 天、A—D 四题、英文、正�
 ## 脚本
 
 ```bash
-python scripts/audit_apmcm_submission.py --paper Aapmcm26XXXXX.pdf \
-  --control Aapmcm26XXXXXcns.pdf --zip Aapmcm26XXXXXfj.zip
+python scripts/audit_apmcm_submission.py --paper Aapmcm263XXXXX.pdf \
+  --control Aapmcm263XXXXXcns.pdf --zip Aapmcm263XXXXXfj.zip
 python scripts/audit_git_hygiene.py --root .
 python scripts/env_doctor.py
 python scripts/analyze_award_papers.py --input 优秀论文.zip --out metrics.csv

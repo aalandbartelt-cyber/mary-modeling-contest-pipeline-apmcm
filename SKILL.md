@@ -72,6 +72,8 @@ description: Use when preparing, running, writing, or rescuing an APMCM (Asia an
 - `references/20_建模叙事公式与可读性规范.md`：建模思路谱系、公式呈现规范、可读性句式、格式细节。
 - `references/21_自有论文蒸馏.md`：三篇跨赛终稿的结构/证据链参考实现、附录体系、迁移边界。
 - `references/22_数维杯与亚太杯摘要深度解剖.md`：Summary 黄金配方、证据链型/品牌叙事型双模板、逐句技巧。
+- `references/23_章节级解剖与模板库.md`：Intro/文献/假设/灵敏度/评价/排版模板与红线。
+- `references/24_表格解剖与评委阅读路径.md`：结果表配方、数据来源表、参数内联、评委阅读路径。
 
 **不可直接迁移（APMCM 优先）：**
 
@@ -123,7 +125,16 @@ P9 AI：2026 官方规定；使用 AI 须正文标注/References 工具条目/AI
 
 ## 3. 选题：A—D 的路线判断
 
-2025 年真题结构（用于理解 APMCM 出题风格，不保证 2026 相同）：
+**2026 已发布四题**（详见 `references/03_四题路线与选题.md` 3.1.1）：
+
+| 题 | 主题 | 核心方法 | 数据 |
+|---|---|---|---|
+| A | 洪水灾害评估与应急救援优化（图像识别） | 遥感分割、多源融合、淹没区制图、受灾评估、救援调度、建议信 | 训练集 tar 397 MB |
+| B | 转炉炼钢双模态时序融合 | 光谱清洗/重构、时序去噪、时滞估计、光谱→烟气实时预测（10 炉次泛化） | 106 MB |
+| C | 非洲企鹅海上声通信与回放响应 | 叫声分类/非参数检验、传播保真度、有效通信半径、行为响应、保护情景 | R 代码+CSV+音频+视频 |
+| D | 量子计算机钙钛矿稀有目标搜索 | V̂ 代理模型、QUBO 单点/三选一 | 训练/验证/盲测/候选池 CSV |
+
+2025 年真题结构（历史参考，用于理解出题风格，不保证每年相同）：
 
 | 题 | 类型 | 核心方法 | 难度 | 竞争 | 适合 |
 |---|---|---|---|---|---|
@@ -134,9 +145,9 @@ P9 AI：2026 官方规定；使用 AI 须正文标注/References 工具条目/AI
 
 **选择原则**：
 
-1. 先看数据是否可拿到、是否能清洗；C 题通常数据量大，D1 必须完成数据管线。
+1. 先看数据是否可拿到、是否能清洗；A/B 的压缩包要先解压核对字段与覆盖范围。
 2. 不按“题简单”选，按“我们能在 4 天内做出完整证据链”选。
-3. C 题选的人最多，必须靠**数据正确性 + 机制自洽 + 英文可视化**拉开差距；不要只做描述统计。
+3. 2026 不要按字母押题型（B/C 已换赛道）；四题都要读题面，再按背景与数据匹配度选。
 4. B/D 竞争小但门槛高；如果队伍没有相应背景，不要用“人少”当唯一理由。
 5. 任何时候都不要四题都做；只选一题。
 
@@ -193,7 +204,7 @@ N   Model Evaluation（strengths / weaknesses / sensitivity）
 
 ```text
 Problem Chosen: C
-Team Number: apmcm26XXXXX
+Team Number: apmcm263XXXXX
 
 Summary
 
@@ -382,7 +393,9 @@ p2 Contents（目录）
 - [ ] 图/表/公式编号连续；正文引用一致；表不跨页；图题同页。
 - [ ] 参考文献按引用顺序；正文有 [n]；书籍条目带页码；无僵尸文献。
 - [ ] 附录有软件名 + 全部源代码；源代码保留到获奖名单公布；代码路径与支撑包一致。
-- [ ] Control sheet = `#***cns.pdf/.jpg`，单独一页、三人签名，不在论文里。
+- [ ] Control sheet = `#***cns.pdf/.jpg`，单独一页、三人英文签名，不在论文里。
+- [ ] 查重红线：未与其他队共享文稿/代码，自建库相似度 <30%（超过 30% 双方取消资格）。
+- [ ] 提前 ≥30 分钟提交；若重传，已点“提交电子档”确认更新。
 - [ ] 支撑材料仅在题面明确要求时提交；若交命名 `#***fj.rar/.zip`，无原始数据、无身份信息。
 - [ ] PDF 元数据 author/creator 干净；无中文。
 - [ ] 最终 PDF 在干净环境打开一次；页数/页眉/目录正确。
@@ -395,8 +408,8 @@ p2 Contents（目录）
 一键审计：
 
 ```bash
-python scripts/audit_apmcm_submission.py --paper Aapmcm26XXXXX.pdf --control Aapmcm26XXXXXcns.pdf
-python scripts/audit_apmcm_submission.py --paper Aapmcm26XXXXX.pdf --zip Aapmcm26XXXXXfj.zip
+python scripts/audit_apmcm_submission.py --paper Aapmcm263XXXXX.pdf --control Aapmcm263XXXXXcns.pdf
+python scripts/audit_apmcm_submission.py --paper Aapmcm263XXXXX.pdf --zip Aapmcm263XXXXXfj.zip
 python scripts/audit_git_hygiene.py --root .
 python scripts/env_doctor.py
 ```
@@ -445,9 +458,9 @@ python scripts/env_doctor.py
 
 | 文件 | 用途 |
 |---|---|
-| `references/01_APMCM赛制与提交.md` | 2026 规则、2025 格式、命名、control sheet |
+| `references/01_APMCM赛制与提交.md` | 2026 规则与格式规范、命名、页眉、control sheet、纪律/查重/提交操作 |
 | `references/02_英文论文结构与写作.md` | summary/contents/正文/附录、英文句式、常见错误 |
-| `references/03_四题路线与选题.md` | A—D 题型、2025 案例、选择矩阵 |
+| `references/03_四题路线与选题.md` | A—D 题型、2026 四题画像、历史案例、选择矩阵 |
 | `references/04_四天冲刺与分工.md` | D1—D4 节奏、三人分工、检查点 |
 | `references/05_图表公式与LaTeX模板.md` | 英文图表、公式、LaTeX/Word、模板清理 |
 | `references/06_评审与答辩式自查.md` | 官方七条、P0/P1/P2、英文 QA |
@@ -467,6 +480,8 @@ python scripts/env_doctor.py
 | `references/20_建模叙事公式与可读性规范.md` | 获奖论文建模思路谱系、公式呈现规范（校准块/underbrace/分阶段）、可读性句式、格式细节 |
 | `references/21_自有论文蒸馏.md` | 队上三篇跨赛终稿（数维杯为主）的结构/证据链参考实现、附录体系、迁移边界 |
 | `references/22_数维杯与亚太杯摘要深度解剖.md` | Summary 黄金配方：硬指标区间、证据链型/品牌叙事型双模板、8 个逐句技巧与排版红线 |
+| `references/23_章节级解剖与模板库.md` | Intro/文献引用/假设符号/数据预处理/灵敏度/评价章/最终答案表/排版参数/代码红线 |
+| `references/24_表格解剖与评委阅读路径.md` | 结果表六列配方/数据来源表/参数物理锚/验证章模式/评委阅读路径与时间分配优先级 |
 | `references/important/MathorCup_2026_A2601605.pdf` | M 杯最终论文原件（元数据已清理，正文未改） |
 | `references/common/` | 工件所有权、验证、总论文整合、数据路线、WSL/Git（13—17） |
 | `assets/award_paper_metrics.csv` | 16 篇获奖论文的页数/摘要词数/数字/图表统计 |

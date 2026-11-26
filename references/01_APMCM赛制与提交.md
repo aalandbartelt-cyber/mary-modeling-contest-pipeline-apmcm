@@ -19,6 +19,7 @@
 | 开赛 | 北京时间 2026-11-26（周四）06:00 |
 | 结束/提交截止 | 北京时间 2026-11-30（周一）09:00 |
 | 提交系统 | https://www.saikr.com/vse/apmcm26 |
+| 队号 | **13 位**，赛氪报名编号 `apmcm263*****`（报名系统生成） |
 | 队伍 | ≤3 名全日制在校大学生；每人只能参加一队 |
 | 题目 | A/B/C/D 任选 **一题**；报名系统所选字母必须与论文内容一致，不一致**取消资格** |
 | 语言 | 英文；正文、图表、表注不得出现中文 |
@@ -70,13 +71,13 @@ p2  Contents（目录）
 
 | 页 | 左页眉 | 右页眉 |
 |---|---|---|
-| p1 Summary | `Team # apmcm26XXXXX` | 无页码 |
-| p2 Contents | `Team # apmcm26XXXXX` | 无页码 |
-| 正文 p1 起（`\setcounter{page}{1}`） | `Team # apmcm26XXXXX` | `Page x of y` |
+| p1 Summary | `Team # apmcm263XXXXX` | 无页码 |
+| p2 Contents | `Team # apmcm263XXXXX` | 无页码 |
+| 正文 p1 起（`\setcounter{page}{1}`） | `Team # apmcm263XXXXX` | `Page x of y` |
 | 附录 | 同上 | 同上 |
 
 - `y` = `\pageref{LastPage}`，即**正文 + 附录**的最后一页（模板在 Contents 后重置页码，所以 y 不含 Summary/Contents）。**不要手写 `of 25`**；y 大于 25 不代表正文超页，正文页数单独按 References 前计算。
-- 格式规范正文的示例写作 `Team Aapmcm26300001` / `Page 10 of 25`（不带 `#`，且 25 只是示例数字）；官方模板输出是 `Team # apmcm26XXXXX` + `Page x of y`。**以官方模板导出效果为准**；手工 Word 时照模板做左队号、右页码，不要自创第三种写法。
+- 格式规范正文的示例写作 `Team Aapmcm26300001` / `Page 10 of 25`（不带 `#`，且 25 只是示例数字）；官方模板输出是 `Team # apmcm263XXXXX` + `Page x of y`。**以官方模板导出效果为准**；手工 Word 时照模板做左队号、右页码，不要自创第三种写法。
 - 页眉只允许队号与页码；姓名、学校、指导教师、邮箱、学号一律不得出现。
 - 每页都查：Summary、Contents、正文、附录、代码页。
 - 2026 规范明确说“未提及的版式（字体、行距、颜色等）没有具体要求，但要让论文美观”——页眉/页码/首页/目录/25 页是硬项，版式是软项。
@@ -134,7 +135,7 @@ p2  Contents（目录）
 - 官方模板（Word Summary/Control Sheet、LaTeX `apmcmthesis`）**仅供参考，不做强制要求**；但套模板最省格式风险。
 - 官方建议：不熟 LaTeX 的队不要用 LaTeX；任何排版软件自身编译错误，组委会不解答。
 - Word 路线：用 `2026 APMCM Summary Sheet.docx`（含 p1 Summary + p2 Contents）与 `2026 APMCM Control Sheet.docx`；页眉按 1.3 手工设置；目录用 TOC 域并在导出前更新。
-- LaTeX 路线：`\documentclass{apmcmthesis}`、`\tihao{A}`、`\baominghao{apmcm26XXXXX}`；`frontmatterstyle` → `abstract` → `\tableofcontents` → `mainmatterstyle` → `\setcounter{page}{1}`。
+- LaTeX 路线：`\documentclass{apmcmthesis}`、`\tihao{A}`、`\baominghao{apmcm263XXXXX}`；`frontmatterstyle` → `abstract` → `\tableofcontents` → `mainmatterstyle` → `\setcounter{page}{1}`。
 - 模板自带中文示例（CJK 字样、公众号图、中文 caption、`cat` 图）必须删除/替换；正文/图内不得有中文。
 - 不要改模板的页面设置（geometry：上下 26.4 mm、左右 31.8 mm）和页眉格式。
 
@@ -142,26 +143,54 @@ p2  Contents（目录）
 
 ## 1.8 提交前 P0
 
-- [ ] 报名系统题号 = 论文题号 = 文件名首字母；
+- [ ] 报名系统题号 = 论文题号 = 文件名首字母；队号 13 位 `apmcm263*****`；
 - [ ] 论文名 `#***.pdf`；Control Sheet `#***cns.pdf/.jpg`；支撑材料仅在题面要求时交 `#***fj.rar/.zip`；
 - [ ] p1 Summary（Team Number / Problem Chosen / Keywords）；p2 Contents；正文 ≤25 页；
+- [ ] Summary 第一页填了选题 + 队号；
 - [ ] 页眉每页只有队号+页码；正文页 `Page x of y`，y 用模板 `LastPage` 自动生成；
 - [ ] 正文/图表/代码注释/图内文字无中文；
-- [ ] 无姓名/学校/教师/邮箱/学号；
-- [ ] Control Sheet 三人签名、单独一页、未混入论文；
+- [ ] 无姓名/学校/教师/邮箱/学号（摘要/正文出现个人信息最高只获成功参赛奖）；
+- [ ] 查重自查：未与其他队共享文稿/代码；与公开/他队文本相似度 <30%；
+- [ ] Control Sheet 三人英文签名、单独一页、未混入论文；
 - [ ] 附录有软件名 + 全部源代码；代码保留到获奖名单公布；
-- [ ] PDF 元数据干净；干净环境（另一台机器/阅读器）打开一次。
+- [ ] PDF 元数据干净；干净环境（另一台机器/阅读器）打开一次；
+- [ ] 提前 ≥30 分钟提交；重传后点了“提交电子档”。
 
 一键检查：
 
 ```bash
-python scripts/audit_apmcm_submission.py --paper Aapmcm26XXXXX.pdf \
-  --control Aapmcm26XXXXXcns.pdf [--zip Aapmcm26XXXXXfj.zip]
+python scripts/audit_apmcm_submission.py --paper Aapmcm263XXXXX.pdf \
+  --control Aapmcm263XXXXXcns.pdf [--zip Aapmcm263XXXXXfj.zip]
 ```
 
 ---
 
-## 1.9 2026 易漏点（规则 + 规范原文核对）
+## 1.9 参赛纪律与提交操作（2026-11-26《参赛纪律和论文提交方式说明》）
+
+> 官方 3 页说明，开赛当天发布；以下为原文要点。
+
+**纪律红线**
+
+- 严禁抄袭、购买论文；禁止参加各种“竞赛思路交流群”，否则取消评奖资格。
+- 论文会做**自建库查重**：两篇论文相似度**超过 30%** 视为作弊，取消相似论文参赛资格，情节严重者公开通报。
+  → 不与其他队共享文稿/代码/图表源文件；引用他人内容必须改写并标注来源；队友间也不要把同一份草稿发给外部“润色”。
+- Summary 第一页必须填写**选题和队号**（赛氪报名编号 `apmcm263*****`，共 13 位）。
+- 摘要页和正文**不得出现参赛者个人信息**；一旦出现，**最高只能获得成功参赛奖**（不是简单退回修改）。
+- 控制页签名：**姓名用英文签名**。
+
+**提交操作**
+
+- 队长用自己电脑登录 https://www.saikr.com/vse/apmcm26 → 我的竞赛 → 报名管理 → 去提交。
+- **至少提前 30 分钟—1 小时提交**；上传需要时间，卡点必失败。
+- 截止前可重新上传；但必须点右下角**“提交电子档”**确认，不点不会更新。
+- 备用邮箱：仅在赛氪系统上传失败时使用；**已在赛氪成功提交的队伍禁止再发邮箱**（重复无效，以赛氪为准）。
+- 邮箱提交每人限一次，**以第一次为准**；所有文件放在**一封邮件、一个压缩包**里；邮箱地址 11-30 公布。
+- 邮件标题写队号；论文附件 `题号+队号.pdf`；承诺书+支撑材料打包 `题号+队号.rar/zip`。
+- 支撑材料口径冲突：本说明写“支撑材料（可选）”，格式规范写“题面未明确要求请不要提交”→ 以更严格的格式规范为准，除非题面明确要求。
+
+---
+
+## 1.10 2026 易漏点（规则 + 规范原文核对）
 
 - 队伍上限 **3 名全日制在校大学生**；每人只能参加一支队伍，重复参赛取消成绩。
 - 竞赛期间不得向指导教师或队外任何人寻求帮助/讨论（Email、电话、私下交谈、网络聊天、问答系统都禁止）。AI 工具按 `12_AI工具与学术诚信.md` 的官方规定单独处理，不能用来绕开“队外帮助”限制。

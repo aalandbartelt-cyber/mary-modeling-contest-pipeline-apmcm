@@ -3,9 +3,9 @@
 """audit_apmcm_submission.py — APMCM 论文 PDF / control sheet / support ZIP 检查。
 
 用法:
-    python scripts/audit_apmcm_submission.py --paper Aapmcm26XXXXX.pdf
-    python scripts/audit_apmcm_submission.py --paper Aapmcm26XXXXX.pdf \
-        --control Aapmcm26XXXXXcns.pdf --zip Aapmcm26XXXXXfj.zip
+    python scripts/audit_apmcm_submission.py --paper Aapmcm263XXXXX.pdf
+    python scripts/audit_apmcm_submission.py --paper Aapmcm263XXXXX.pdf \
+        --control Aapmcm263XXXXXcns.pdf --zip Aapmcm263XXXXXfj.zip
 
 检查:
   - 文件名是否符合 `#***.pdf`（题号+队号）
@@ -44,7 +44,7 @@ def audit_pdf(path: Path):
     if not path.is_file():
         add("FAIL", "论文 PDF 不存在", str(path)); return
     add("PASS" if NAME_RE.match(path.name) else "FAIL", "论文文件名",
-        path.name + (" 符合 <题号><队号>.pdf" if NAME_RE.match(path.name) else " 应为 Aapmcm26XXXXX.pdf"))
+        path.name + (" 符合 <题号><队号>.pdf" if NAME_RE.match(path.name) else " 应为 Aapmcm263XXXXX.pdf"))
     add("PASS" if path.stat().st_size / 1024 / 1024 <= 20 else "WARN", "PDF 体积",
         f"{path.stat().st_size/1024/1024:.2f} MB")
 

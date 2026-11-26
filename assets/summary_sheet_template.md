@@ -2,7 +2,7 @@
 
 ```text
 Problem Chosen: C
-Team Number: apmcm26XXXXX
+Team Number: apmcm263XXXXX
 
 Summary
 

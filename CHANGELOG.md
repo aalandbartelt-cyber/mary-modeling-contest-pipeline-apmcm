@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-11-26 — 2026 赛题发布 + 参赛纪律/提交方式说明
+
+- 新增 2026 四题画像（`references/03_四题路线与选题.md` 3.1.1，`SKILL.md` 第 3 节）：A 洪水灾害评估与应急救援（图像识别）、B 转炉炼钢双模态时序融合、C 非洲企鹅声通信与回放响应、D 量子计算机钙钛矿稀有目标搜索；附数据规模、分问结构、方法路线与选题提示。
+- 修正“字母位置极稳”的旧规律：2026 的 B/C 已换赛道，不能按字母押题型。
+- 新增 `references/01_APMCM赛制与提交.md` 1.9 参赛纪律与提交操作：自建库查重 >30% 判作弊、摘要/正文个人信息最高只获成功参赛奖、承诺书英文签名、提前 30—60 分钟提交、重传须点“提交电子档”、备用邮箱规则。
+- 队号统一为官方 13 位 `apmcm263XXXXX`（原 `apmcm26XXXXX` 少一位），涉及 SKILL/README/refs 01/02/05/08/assets/audit 脚本。
+- `references/12_AI工具与学术诚信.md` 增补 2026 查重红线（与 AIGC 阈值是两套要求）。
+- `assets/apmcm_submission_checklist.md` 增补查重、英文签名、提交窗口、重传确认、邮箱规则。
+- `SKILL.md` P0 增补查重/签名/提交确认；参考索引更新 ref 01/03 描述。
+
 ## 2026-11-25 — 2026 官方提交规范 / 模板 / 承诺书落地
 
 - 读取 2026-11 官方《Essay format and submission specifications》（2 页）、《论文提交规范、论文模板、承诺书发布》通知、`2026 APMCM Summary Sheet.docx`、`2026 APMCM Control Sheet.docx`、2026 LaTeX 模板（`apmcmthesis.cls` / `main.tex` / `ControlSheet.tex` / 示例 PDF）。

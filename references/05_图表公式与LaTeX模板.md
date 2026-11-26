@@ -48,7 +48,7 @@
 ```latex
 \documentclass{apmcmthesis}
 \tihao{A}                      % 题号
-\baominghao{apmcm26XXXXX}      % 队号
+\baominghao{apmcm263XXXXX}      % 队号
 \begin{document}
 \pagestyle{frontmatterstyle}
 \begin{abstract} ... \keywords{...} \end{abstract}

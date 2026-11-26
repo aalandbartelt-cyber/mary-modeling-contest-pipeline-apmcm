@@ -3,7 +3,7 @@
 > APMCM 2026 official requirement: teams that use AI tools must submit an AI tool usage details PDF.
 > This template follows the four required items; keep every statement accurate and verifiable.
 
-- Team Number: `apmcm26XXXXX`
+- Team Number: `apmcm263XXXXX`
 - Problem Chosen: `TBD`
 - Report Date: `YYYY-MM-DD`
 
