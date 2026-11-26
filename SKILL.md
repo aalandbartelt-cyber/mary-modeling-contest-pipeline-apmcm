@@ -74,6 +74,9 @@ description: Use when preparing, running, writing, or rescuing an APMCM (Asia an
 - `references/22_数维杯与亚太杯摘要深度解剖.md`：Summary 黄金配方、证据链型/品牌叙事型双模板、逐句技巧。
 - `references/23_章节级解剖与模板库.md`：Intro/文献/假设/灵敏度/评价/排版模板与红线。
 - `references/24_表格解剖与评委阅读路径.md`：结果表配方、数据来源表、参数内联、评委阅读路径。
+- `references/25_D题量子优化优秀论文解剖.md`：**2026 选 D 题者核心必读**——量子优化题 QUBO 叙事骨架、逐约束罚函数章法、验证织进结果、成本/精度权衡表件、与 2026D 的结构差异对照。
+- `references/26_D题三模链条完整性与诚信纪律检查清单.md`：D 题冲奖验收闸口——一票否决红线/三模链条逐问检查/差异化反超点/评委攻防演练。
+- `references/27_Kaiwu_SDK_1.4.4_精读蒸馏.md`：SDK API 级精读——QUBO→Ising 公式/精度四法定级/get_min_penalty 实质/真机双模式/排雷速查表/方法节英文句式。
 
 **不可直接迁移（APMCM 优先）：**
 
@@ -287,7 +290,7 @@ Keywords: keyword1; keyword2; keyword3; keyword4
 - 每张图/表必须在正文被点名，并解释“说明了什么”，不要只复述数字。
 - 图内不得出现中文；LaTeX 模板里的中文示例（CJK、公众号图）必须删除/替换。
 
-最终印刷尺寸、图例、多面板、图文连续和 PDF/Word 验收见 `10_图表与排版项目规范.md`；图件清单模板见 `assets/apmcm_figure_inventory_template.csv`。
+最终印刷尺寸、图例、多面板、图文连续和 PDF/Word 验收见 `10_图表与排版项目规范.md`；图件清单模板见 `assets/apmcm_figure_inventory_template.csv`。**量子/优化题（D）出图先读 `apmcm_figure_playbook.md` §13-15**：表驱动证据链（每页 2-4 表）与数据题图驱动相反，真机证据图、精度-位宽曲线、富集度统计图是差异化主场。
 
 ---
 
@@ -441,7 +444,7 @@ python scripts/env_doctor.py
 | 19 | 附件字段名义≠内容（运保费当货值） | 全盘皆输 | 开工先审计：导出参数+锚点量级+年份覆盖，见 `references/16_数据与业务题实战.md` |
 | 20 | 五问五套割裂模型/五问全浅 | 无主线无深度 | 共享参数情景贯穿；主攻取舍写进论文，见 `16` |
 | 21 | 非技术信件问写成技术报告 | 直接丢该问分 | 最后一问常要求给公司/市民/UN 写信，按非技术读者写，见 `references/03_四题路线与选题.md` |
-| 22 | 结果页只放图表没有编号发现 | 评委自己解读，记不住 | 每个结果配"名字+数字+机制"编号发现句+每问小结，见 `references/18_C题优秀论文逐页解剖.md` |
+| 22 | 结果页只放图表没有编号发现 | 评委自己解读，记不住 | 每个结果配"名字+数字+机制"编号发现句+每问小结，见 `references/18_C题优秀论文逐页解剖.md`；量子题用"约束逐条点名验证"句式替代，见 `references/25_D题量子优化优秀论文解剖.md` |
 
 ---
 
@@ -476,6 +479,9 @@ python scripts/env_doctor.py
 | `references/16_数据与业务题实战.md` | 问题链、预处理、不确定性、业务约束、数字溯源 |
 | `references/17_在线信息约束与盲测纪律.md` | 决策时刻信息清单、未来扰动审计、盲测一次性、评估历史日志 |
 | `references/18_C题优秀论文逐页解剖.md` | 数据类四篇获奖论文逐页地图、页面配方、品牌化手法、非技术 Article 写法 |
+| `references/25_D题量子优化优秀论文解剖.md` | 量子优化题（2025D 机组组合）深度解剖：QUBO 转化章法、步骤复述块、表驱动证据链、量子 vs 经典对照、规模缩减叙事、2026D 差异对照 |
+| `references/26_D题三模链条完整性与诚信纪律检查清单.md` | D 题验收：一票否决红线、三模链条逐问、差异化反超点、评委攻防 |
+| `references/27_Kaiwu_SDK_1.4.4_精读蒸馏.md` | Kaiwu SDK 1.4.4 API 级语义：QUBO→Ising、精度定级、真机模式、排雷表 |
 | `references/19_优秀论文追踪分析规程.md` | 每年新获奖论文的三步分析流程、必答问题、稳定结论、截断副本检测 |
 | `references/20_建模叙事公式与可读性规范.md` | 获奖论文建模思路谱系、公式呈现规范（校准块/underbrace/分阶段）、可读性句式、格式细节 |
 | `references/21_自有论文蒸馏.md` | 队上三篇跨赛终稿（数维杯为主）的结构/证据链参考实现、附录体系、迁移边界 |
@@ -497,7 +503,9 @@ python scripts/env_doctor.py
 | `assets/english_style_guide.md` | 英文写作/术语/标点 |
 | `assets/paper_outline.md` | 论文骨架 |
 | `assets/apmcm_external_review_prompt_template.md` | 请外部 AI 全量复核原则性错误的提示词模板 |
-| `assets/apmcm_figure_playbook.md` | 数据题图表手册：目的→图型对照、配色规范、注释手法、图文衔接句式 |
+| `assets/apmcm_figure_playbook.md` | 图表手册（数据题+量子优化题双谱系）：目的→图型对照、配色规范、注释手法、图文衔接句式；§13-15 为量子题专题（QUBO 矩阵热图/精度位宽曲线/真机证据/富集度统计图/成本账本图） |
+| `assets/apmcm_d_plot_templates.py` | D 题出版级出图 Python 样板库（三联诊断/四维气泡Pareto/plasma热图/富集度统计图） |
+| `assets/apmcm_d_table_templates.tex` | D 题出版级 booktabs 表格骨架 T1-T8（验证列内嵌结果表/量子经典对照/成本账本/质量六项/三层误差账/P1八路线对照/富集统计/精度策略） |
 | `scripts/audit_apmcm_submission.py` | PDF/页眉/目录/中文/元数据/包检查 |
 | `scripts/analyze_award_papers.py` | 优秀论文结构特征批量扫描（v2：页眉截断检测、公式密度、小结件、代码页） |
 | `scripts/audit_git_hygiene.py` | 仓库卫生 |

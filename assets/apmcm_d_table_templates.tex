@@ -1,0 +1,189 @@
+% APMCM 2026 D 题出版级表格模板库（booktabs）
+% 蒸馏自 2025D 优秀论文解剖（Table 6/7/8/10）+ Perplexity 第四轮成本账本结构 + 26 号验收清单
+% 使用纪律：三线表（无竖线）、列数 ≤7、单位进表头、数字右对齐、验证列内嵌不另立表
+% 需要 \usepackage{booktabs} 与 \usepackage{threeparttable}（表注用）
+
+% ============================================================
+% T1. 结果表内嵌验证列（2025D Table 7 解剖复刻）——P2/P3 候选结果主表
+% 灵魂：Feasible 与 BF-Match 两列焊在结果表内，评委一行扫完结果+验证
+% ============================================================
+\begin{table}[htbp]
+  \centering
+  \caption{Top-ranked candidates from the QUBO screening with embedded verification}
+  \label{tab:p2_candidates}
+  \begin{tabular}{ccccccc}
+    \toprule
+    Rank & A & B & X & $\hat{V}$ & One-hot feasible (y/n) & Brute-force match (y/n) \\
+    \midrule
+    1 & -- & -- & NO$_2$ & -- & Y & Y \\
+    2 & -- & -- & NO$_2$ & -- & Y & Y \\
+    \bottomrule
+  \end{tabular}
+  \begin{minipage}{\linewidth}\vspace{2pt}\footnotesize
+    Verification columns are computed by independent recomputation of business constraints,
+    not the solver's internal feasibility flag.
+  \end{minipage}
+\end{table}
+
+% ============================================================
+% T2. 量子 vs 经典对照表（2025D Table 9 解剖复刻）——Gap% 列是灵魂
+% ============================================================
+\begin{table}[htbp]
+  \centering
+  \caption{Quantum versus classical optimisation results}
+  \label{tab:quantum_vs_classical}
+  \begin{tabular}{lccc}
+    \toprule
+    Metric & Classical (exact) & Quantum (CIM) & Gap (\%) \\
+    \midrule
+    Objective value $\hat V$       & -- & -- & -- \\
+    Solve time (s)                 & -- & -- & -- \\
+    Constraint violations          & 0  & -- & -- \\
+    Top-20 overlap with exact set  & -- & -- & -- \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+% ============================================================
+% T3. 编码—精度—求解成本账本（Perplexity 第四轮 §3.3 结构）
+% 一行 = 一条完整流水线；禁止把子问题耗时与联合总耗时并排直接比较
+% ============================================================
+\begin{table}[htbp]
+  \centering
+  \caption{Encoding--precision--solver cost ledger across formulations}
+  \label{tab:cost_ledger}
+  \begin{tabular}{lcccccc}
+    \toprule
+    Pipeline & X scope & Logical bits & Spins after adapt. & Non-zero couplings & Total solve time (s) & Hardware calls \\
+    \midrule
+    Exact enumeration (reference) & 3 & --  & -- & -- & -- & 0 \\
+    Fixed-X decomposition ($3\times$104-bit) & 3 & 104/sub & -- & -- & -- & -- \\
+    Composite one-hot (208-bit)    & 3 & 208 & -- & -- & -- & -- \\
+    HOBO $\rightarrow$ QUBO reduction & 3 & -- & -- & -- & -- & -- \\
+    \bottomrule
+  \end{tabular}
+  \begin{minipage}{\linewidth}\vspace{2pt}\footnotesize
+    Decomposition time is the sum over all sub-problems; parallel wall-clock time,
+    if reported, is annotated separately with the parallel resources used.
+  \end{minipage}
+\end{table}
+
+% ============================================================
+% T4. 质量六项表（与 T3 配套，承接账本第二部分）
+% ============================================================
+\begin{table}[htbp]
+  \centering
+  \caption{Solution quality metrics across formulations (same frozen surrogate table)}
+  \label{tab:quality_ledger}
+  \begin{tabular}{lcccccc}
+    \toprule
+    Pipeline & Business feas.\ rate & Aux.\ consist.\ rate & Exact-table optimum hit & Quantised optimum hit & Regret vs exact & Near-optimal cover \\
+    \midrule
+    Fixed-X decomposition & -- & -- & -- & -- & -- & -- \\
+    Composite one-hot     & -- & -- & -- & -- & -- & -- \\
+    HOBO reduction        & -- & -- & -- & -- & -- & -- \\
+    \bottomrule
+  \end{tabular}
+  \begin{minipage}{\linewidth}\vspace{2pt}\footnotesize
+    Auxiliary consistency (split or Rosenberg variables) is reported separately from
+    business feasibility; the two are never merged into a single feasibility number.
+  \end{minipage}
+\end{table}
+
+% ============================================================
+% T5. 三层误差账本（2024D 二分法升级 + 26 号清单要求）
+% ============================================================
+\begin{table}[htbp]
+  \centering
+  \caption{Error decomposition ledger (all quantities rescaled to the original $V$ units)}
+  \label{tab:error_decomposition}
+  \begin{tabular}{lcc}
+    \toprule
+    Error source & Magnitude & Measurement protocol \\
+    \midrule
+    Surrogate epistemic error (P1)      & -- & Grouped OOF residuals by X family \\
+    8-bit quantisation error            & -- & Feasible-set energy re-evaluation \\
+    Solver gap (SA/CIM vs brute force)  & -- & Regret on identical quantised model \\
+    \midrule
+    Total observed deviation            & -- & End-to-end comparison \\
+    \bottomrule
+  \end{tabular}
+  \begin{minipage}{\linewidth}\vspace{2pt}\footnotesize
+    Components need not sum to the total; the decomposition is diagnostic,
+    not a variance partition.
+  \end{minipage}
+\end{table}
+
+% ============================================================
+% T6. P1 模型对照总表（对齐 Codex 最终实验结果表格式）
+% ============================================================
+\begin{table}[htbp]
+  \centering
+  \caption{P1 candidate pipelines under the main grouped validation protocol}
+  \label{tab:p1_model_comparison}
+  \begin{tabular}{lcccccc}
+    \toprule
+    Pipeline & RMSE & MSE$_{G=0}$ contrib.\ & MSE$_{G=1}$ contrib.\ & EF$_{V\le2}$@20 & NDCG@20 & regret@20 \\
+    \midrule
+    R-raw    & -- & -- & -- & -- & -- & -- \\
+    R-log    & -- & -- & -- & -- & -- & -- \\
+    W-log    & -- & -- & -- & -- & -- & -- \\
+    H-soft   & -- & -- & -- & -- & -- & -- \\
+    S-eps    & -- & -- & -- & -- & -- & -- \\
+    B-eps    & -- & -- & -- & -- & -- & -- \\
+    L-single & -- & -- & -- & -- & -- & -- \\
+    L-hash4  & -- & -- & -- & -- & -- & -- \\
+    \midrule
+    Mean baseline   & -- & -- & -- & -- & -- & -- \\
+    Additive Ridge  & -- & -- & -- & -- & -- & -- \\
+    Uniform random  & -- & -- & -- & 1.0 & -- & -- \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+% ============================================================
+% T7. 富集统计检验表（Perplexity 第二轮统计辩护结构）
+% ============================================================
+\begin{table}[htbp]
+  \centering
+  \caption{Frozen top-20 screening evaluation against uniform random selection}
+  \label{tab:enrichment_stats}
+  \begin{tabular}{lccccc}
+    \toprule
+    Evaluation pool & $N$ & $M$ ($V\le2$) & Hits $h$ & EF$_{V\le2}$@20 & One-sided hypergeom.\ $p$ \\
+    \midrule
+    Development pool (02, OOF) & -- & -- & -- & -- & -- \\
+    Holdout pool (03)          & -- & -- & -- & -- & -- \\
+    Same-constraint random baseline & -- & -- & -- & 1.0 & -- \\
+    \bottomrule
+  \end{tabular}
+  \begin{minipage}{\linewidth}\vspace{2pt}\footnotesize
+    Denominators match the actual screening pool in each row.
+    Enrichment over uniform random selection does not establish superiority
+    over competing models or experimental photocatalytic activity.
+  \end{minipage}
+\end{table}
+
+% ============================================================
+% T8. 精度策略对比表（2025D Table 10 解剖复刻——含诚实负结果列）
+% ============================================================
+\begin{table}[htbp]
+  \centering
+  \caption{Precision adaptation strategies for the 8-bit SPQC hardware constraint}
+  \label{tab:precision_strategies}
+  \begin{tabular}{lccccc}
+    \toprule
+    Strategy & Dynamic range red.\ (\%) & Spins after adapt.\ & Solve time (s) & Hit retention (\%) & Exact optimum preserved \\
+    \midrule
+    Naive truncation      & -- & -- & -- & -- & No \\
+    Tightened $\lambda$   & -- & -- & -- & -- & -- \\
+    Mutate (opt.-pres.)   & -- & -- & -- & -- & -- \\
+    Split (item mode)     & -- & -- & -- & -- & -- \\
+    PrecisionReducer      & -- & -- & -- & -- & -- \\
+    \bottomrule
+  \end{tabular}
+  \begin{minipage}{\linewidth}\vspace{2pt}\footnotesize
+    Negative results are reported as-is; a strategy failing to preserve the exact
+    optimum is not removed from the table.
+  \end{minipage}
+\end{table}

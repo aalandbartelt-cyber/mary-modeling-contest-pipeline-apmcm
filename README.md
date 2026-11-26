@@ -31,6 +31,9 @@ APMCM（亚太杯英文赛）专属 skill：4 天、A—D 四题、英文、正�
 - `references/22_数维杯与亚太杯摘要深度解剖.md`
 - `references/23_章节级解剖与模板库.md`
 - `references/24_表格解剖与评委阅读路径.md`
+- `references/25_D题量子优化优秀论文解剖.md`
+- `references/26_D题三模链条完整性与诚信纪律检查清单.md`
+- `references/27_Kaiwu_SDK_1.4.4_精读蒸馏.md`
 - `references/important/MathorCup_2026_A2601605.pdf`（M 杯 2026 A 最终论文，元数据已清理）
 - `references/common/`（13—17：工件所有权、验证、总论文整合、数据路线、WSL/Git）
 
