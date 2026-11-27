@@ -230,3 +230,7 @@
 - 缩减图后："The reduction compresses the model to N bits while keeping cost increase within X%, aligning with current hardware capacity."
 - 统计图后："The enrichment over random selection (EF = Xx, p = Y) supports the ranking quality, though we do not claim reliable extrapolation to unseen regions."——**富集度句+边界声明必须连体出现**
 - 禁忌：不写 "quantum advantage/supremacy" 类措辞；写 "validates the feasibility of quantum-inspired optimisation"（2025D 口径）。
+
+## 16. 版式与审美六纪律（用户审图固化，2026-11-27）
+
+ SKILL.md §2.5 第 6 条为强制版：无全图大标题、图内禁嵌表格、文字预算制（一目了然）、色彩单调禁令、图型创新优先（柱线图为最后选项）、构图饱满度。执行细节与图型映射见 `references/30_用户数维杯论文视觉风格解剖.md`。

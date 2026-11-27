@@ -256,3 +256,36 @@ def plot_dashboard_2x2(x_idx, target_vals, solver_vals, margin_vals,
     fig.savefig(out_path)
     plt.close(fig)
     return out_path
+
+# ---------------------------------------------------------------------------
+# HARD REQUIREMENT: all figure text must be Times New Roman (user mandate).
+# Call use_times_new_roman() before creating any figure; it raises if the
+# font cannot be registered -- silent fallback to DejaVu is forbidden.
+# ---------------------------------------------------------------------------
+def use_times_new_roman():
+    """Register Times New Roman and force it as the global figure font.
+
+    Raises RuntimeError if the font files cannot be found, because figures
+    typeset in a fallback font are non-compliant and must not be produced.
+    """
+    import glob
+    import matplotlib as mpl
+    from matplotlib import font_manager as fm
+
+    candidates = glob.glob('/mnt/c/Windows/Fonts/times*.ttf') +         glob.glob('/home/*/.local/share/fonts/times*.ttf') +         glob.glob('C:/Windows/Fonts/times*.ttf')
+    registered = False
+    for path in candidates:
+        try:
+            fm.fontManager.addfont(path)
+            registered = True
+        except Exception:
+            continue
+    if fm.findfont('Times New Roman', fallback_to_default=False) is None and not registered:
+        raise RuntimeError(
+            'Times New Roman font files not found; install/register the font '
+            'instead of falling back to another typeface.'
+        )
+    mpl.rcParams['font.family'] = 'serif'
+    mpl.rcParams['font.serif'] = ['Times New Roman']
+    mpl.rcParams['mathtext.fontset'] = 'stix'  # Times-compatible math glyphs
+    return True
