@@ -48,8 +48,8 @@ APMCM（亚太杯英文赛）专属 skill：4 天、A—D 四题、英文、正�
 - `assets/apmcm_figure_inventory_template.csv`
 - `assets/apmcm_problem_chain_template.md`
 - `assets/apmcm_ai_disclosure_checklist.md`
-- `assets/AI_Tool_Usage_Details_Template.md`（English Markdown source）
-- `assets/AI_Tool_Usage_Details_Template.docx`（English, 2 pages, editable）
+- `assets/AI_Tool_Usage_Details_Template.md`（English Markdown source, clean form）
+- `assets/AI_Tool_Usage_Details_Template.docx`（English, 1 page, editable；无提交前需删除的说明）
 - `assets/apmcm_terminology_template.csv`
 - `assets/apmcm_external_review_prompt_template.md`
 - `assets/apmcm_figure_playbook.md`

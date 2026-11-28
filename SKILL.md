@@ -7,6 +7,8 @@ description: Use when preparing, running, writing, or rescuing an APMCM (Asia an
 
 ## 2026-11-27 用户逐问撰稿规则（写作前必读）
 
+P2 阶段执行同一规则第 8 节：双池枚举、限定于实例的证明、任务级端点与通过验收的图件归属。P2 共享分析与假设按该节增补。
+
 最新审阅补充：问题分析每问只写一个短段；Direct answer 直接给模型名/类型、结果和输出。目录与引用启用隐形可点击链接，附录锚点不得重复。英文按 humanizer 润色，保留数字、引用和统计边界。方法流程图须紧凑少字，优先横向三节点；不把折数、参数与数据细节塞进大面积嵌套框。
 
 用户当前撰稿指令与通用示例冲突时，按用户指令执行。详细规则见 `references/31_逐问撰稿与官方模板保真规范.md`：官方形式不改、数维杯只学内容组织；章名用 Problem N；全局背景/重述/分析/符号简短，当前只填 P1；每问先数据后模型、求解与充分检验，最后 Direct answer；公式后顶格释义、短命题与证明可入正文；附录 A 目录/B 补充图表/C 分问源码；全文完成前暂不写综合评价、总结和 AI 披露，初稿不压页；不写内部迭代、工具对话或模板化 AI 措辞。正文禁止连续大段解释堆积，应由必要小标题、短段、核心公式及图表共同承担论证；数字表用自然列宽，简短表注左对齐，避免首列虚宽和居中长表注。该规则优先于下文 Model I、每问重复假设和即时压页等通用示例。既有 P1 图缩入官方版心后的少量 7.3–8 pt 小字为用户本次明确接受的局部例外，不降低未来出图标准。
@@ -560,8 +562,8 @@ python scripts/env_doctor.py
 | `assets/apmcm_figure_inventory_template.csv` | 图件清单（页/问题/数据/字号/引用/状态） |
 | `assets/apmcm_problem_chain_template.md` | 问题链、数据契约、主张→证据、数字溯源 |
 | `assets/apmcm_ai_disclosure_checklist.md` | APMCM 2026 AI 工具使用检查清单 |
-| `assets/AI_Tool_Usage_Details_Template.md` | English Markdown source for the official four AI usage items |
-| `assets/AI_Tool_Usage_Details_Template.docx` | English, 2-page editable template |
+| `assets/AI_Tool_Usage_Details_Template.md` | English Markdown source for the official four AI usage items (clean form) |
+| `assets/AI_Tool_Usage_Details_Template.docx` | English, 1-page editable form; no instructions to delete before submission |
 | `assets/apmcm_terminology_template.csv` | 术语/符号/单位/首次出现位置 |
 | `assets/summary_sheet_template.md` | 一页 summary 模板 |
 | `assets/english_style_guide.md` | 英文写作/术语/标点 |

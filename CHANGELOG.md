@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-29 — AI 使用详情模板改为提交即用（1 页）
+
+- 重做 `assets/AI_Tool_Usage_Details_Template.docx`：删掉 Instructions、示例行、填写提示等“提交前需删除”的内容；1 页 A4，仅保留 6 节可填写表格（Inventory / Purpose & Stages / Interaction Records / Adopted Content / Reference Entries / Team Confirmation）。
+- 同步 `assets/AI_Tool_Usage_Details_Template.md`；README/SKILL 中“2 pages”改为“1 page，无提交前删除项”。
+- 项目内 `02_口径与约定/` 的同名 docx、md、`_preview.pdf` 同步更新；预览 PDF 已清元数据（author 空）。
+
 ## 2026-11-27 — 用户逐问撰稿规则（官方模板保真）
 
 - 新增 `references/31_逐问撰稿与官方模板保真规范.md`：用户确认的撰稿规则——直接用官方 2026 模板且不改字体/版式/页面设置；数维杯只学内容组织；章名用 `Problem N`；每问先数据后模型、求解与充分检验、最后 Direct answer；公式后顶格释义；附录 A 目录 / B 补充图表 / C 分问源码；全文完成前不写综合评价/总结/AI 披露，初稿不压页；禁内部迭代、工具对话与模板化 AI 措辞。
