@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-29 — AI 说明文件名改为 `<题号><队号>ai.pdf`
+
+- 按官方最新通知：AI 使用说明文件名为 `<题号><队号>ai.pdf`（例 `Aapmcm26300001ai.pdf`），PDF；此前 `AI工具使用详情.pdf` 的命名作废。
+- 同步更新 `references/12_AI工具与学术诚信.md`、`references/01_APMCM赛制与提交.md`、`SKILL.md`、`README.md`、`assets/apmcm_submission_checklist.md`。
+- 内容要求不变：工具/版本、用途/环节、关键提示与回复、采纳与人工修改；仍不得加空格、`_final` 或英文文件名。
+
 ## 2026-11-29 — AI 使用详情模板改为提交即用（1 页）
 
 - 重做 `assets/AI_Tool_Usage_Details_Template.docx`：删掉 Instructions、示例行、填写提示等“提交前需删除”的内容；1 页 A4，仅保留 6 节可填写表格（Inventory / Purpose & Stages / Interaction Records / Adopted Content / Reference Entries / Team Confirmation）。
